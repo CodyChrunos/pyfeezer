@@ -3,10 +3,11 @@ import hashlib
 from os import path
 
 from deezer import Deezer as DeezerPy
+from deezer.gw import GWAPIError
+from deezer.api import APIError
 
-from deezer.api import APIError as APIError
 
-import requests
+
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 import mutagen
@@ -20,8 +21,7 @@ from .ProgressHandler import BaseProgressHandler, DefaultProgressHandler
 
 from .constants import track_formats
 
-from .exceptions import LoginError
-from .exceptions import APIRequestError
+
 from .exceptions import DownloadLinkDecryptionError
 
 from . import util
